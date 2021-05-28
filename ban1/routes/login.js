@@ -38,9 +38,23 @@ router.get('/blog',(req,res)=>{
 router.get('/left',(req,res)=>{
     res.render('left');
 });
+<<<<<<< HEAD
 
 router.get('/ind',(req,res)=>{
     res.render('ind');
+=======
+router.get('/add',(req,res) =>{
+    res.render(add);
+    });
+    
+router.post('/add',(req,res) =>{
+       db.sql("insert into people(use_name,t_id) values(?,?,?)",[
+          req.body.use_name,
+          req.body.t_id
+       ],(err,rows)=>{
+     
+       })
+>>>>>>> two
 });
 router.get('/yellow',(req,res)=>{
     res.render('yellow');
@@ -51,13 +65,29 @@ router.get('/ka',(req,res)=>{
 
 
 
+<<<<<<< HEAD
 router.get('/oo',(req,res)=>{
     res.render('oo');
 });
+=======
+>>>>>>> two
 
 router.get('/pp',(req,res)=>{
     res.render('pp');
 });
+<<<<<<< HEAD
+=======
+router.get('/uu',(req,res)=>{
+    res.render('uu');
+});
+router.get('/ii',(req,res)=>{
+    res.render('ii');
+});
+router.get('/blg',(req,res)=>{
+    res.render('blg');
+});
+
+>>>>>>> two
 
 
 module.exports = router;

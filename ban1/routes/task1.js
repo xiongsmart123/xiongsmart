@@ -16,7 +16,11 @@ router.post('/',(req,res) =>{
         host:'localhost',
         user:'root',
         password:'123456',
+<<<<<<< HEAD
         database:'xzh11',
+=======
+        database:'xzh13',
+>>>>>>> two
         port:3306
        });
        connection.connect();

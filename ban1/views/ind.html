@@ -18,6 +18,7 @@
             color:white;
         }
     </style>
+<<<<<<< HEAD
         </head>
         
         <body>
@@ -47,5 +48,28 @@
 
         </tr>
         </table>
+=======
+         <input type="button"  onclick="add()" value="新增">
+                  <table style="width:400px; margin-right:auto; margin-left:auto;" border="1" cellspacing="0">
+                    <form action="/ind" method="POST">
+                        <input type="text" name="use_name" placeholder="name"/>
+                    
+                        <input type="text" name="t_id" placeholder="id"/>
+                    
+                        <input type="submit"/>
+                    </form>
+
+                    <% for(let o of data){%>
+                    <tr> 
+                        <td><%=o.use_name %></td>
+                        <td><%=o.use_id %></td>
+                        <td><%=o.t_id %></td>
+                        <td><button class="upd_bank" data_id="<%=o.use_id %>">修改</button></td>
+                        <td><button class="upd_bank" data_id="<%=o.use_id %>">删除</button></td>
+                    </tr>  
+                  <% }  %>
+        </table>
+        
+>>>>>>> two
 </body>
 </html>
