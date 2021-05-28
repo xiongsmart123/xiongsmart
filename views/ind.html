@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ind</title>
+</head>
+<body>
+    <style>
+         body{background-color: rgb(248, 183, 6);}
+        table, td, th
+        {
+            border:1px solid rgb(12, 234, 241);
+        }
+        th
+        {
+            background-color:rgb(12, 241, 134);
+            color:white;
+        }
+    </style>
+         
+                  <table style="width:400px; margin-right:auto; margin-left:auto;" border="1" cellspacing="0">
+                    <form action="/ind" method="POST">
+                        <input type="text" name="use_name" placeholder="name"/>
+                    
+                        <input type="text" name="t_id" placeholder="票号"/>
+                        <input type="text" name="use_id" placeholder="id"/>
+                    
+                        <input type="submit"/>
+                    </form>
+
+                    <% for(let o of data){%>
+                    <tr> 
+                        <td><%=o.use_name %></td>
+                        <td><%=o.use_id %></td>
+                        <td><%=o.t_id %></td>
+                        <td>
+                            <a href="/ind/del/<%=o.use_id %>">删除</a>
+                            <a href="/ind/to/<%=o.use_id%>">修改</a>
+                        </td>
+                    </tr>  
+                  <% }  %>
+        </table>
+        
+</body>
+</html>
