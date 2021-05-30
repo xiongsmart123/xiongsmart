@@ -10,7 +10,16 @@ router.get('/',(req,res)=>{
    });
    
 });
-
+router.post('/ss',(req,res)=>{
+           
+   db.sqlparam("select * from people where use_name=? or use_id=?",[
+               req.body.search,
+               req.body.search,
+            ],(err,rows)=>{
+                console.log(err)
+                res.render('ind',{ data: rows});
+           });
+});
 
 router.post('/',(req,res) =>{
     let id =req.body.t_id
@@ -22,15 +31,19 @@ router.post('/',(req,res) =>{
       req.body.use_id
    ],(err,rows)=>{
     res.redirect("/ind")
-   })
+   });
 });
+
+
+
+
 router.get('/to/:use_id', function (req, res) {
    var id = req.params.use_id;
    console.log(id);
-db.sqlparam("select * from people where use_id="+id,function(err,rows){
+   db.sqlparam("select * from people where use_id="+id,function(err,rows){
    
           if (err) {
-              res.end('修改页面跳转失败:' + err);
+              res.end(err);
           } else {
    console.log(rows)
               res.render('gai', {datas: rows}); 
@@ -39,21 +52,8 @@ db.sqlparam("select * from people where use_id="+id,function(err,rows){
 
 });
 
-router.post('/to/:use_id', function (req, res) {
-  
-   
-    var name = req.body.use_name;
-    var t_id =req.body.t_id;
-    var use_id =req.body.use_id;
-   console.log(name);
-   console.log(id);
-   db.sqlparam("update people set use_name='"+name+"',use_id='"+use_id+"',t_id='"+t_id+"'where use_id="+use_id,function (err, rows) {
-              if (err) {
-                  res.end('修改失败：' + err)
-              } else {
-                     res.redirect('/ind');
-              }
-     });
+router.post('/to/:use_id',function(req,res){
+  res.send("hhhhhh")
 });
 
 router.get('/del/:use_id', function (req, res) {

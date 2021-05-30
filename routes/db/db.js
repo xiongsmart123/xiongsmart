@@ -1,5 +1,6 @@
 var mysql = require('mysql');
 var mysqlConnect = {};
+
 var pool  = mysql.createPool({
   connectionLimit : 10,
   host            : 'localhost',
@@ -7,7 +8,7 @@ var pool  = mysql.createPool({
   password        : '123456',
   database        : 'xzh13'
 });
- 
+
 mysqlConnect.sql = function(query, callback){
  
 	if (!query) {
@@ -43,3 +44,4 @@ mysqlConnect.sqlparam = function(query,param, callback){
 	});
 }
 module.exports = mysqlConnect;
+

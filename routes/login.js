@@ -5,20 +5,30 @@ var path = require('path');
 const mysql =require('mysql');
 var User = require('./bean/user');
 const { runInContext } = require('vm');
+var db = require('./db/db');
 
 
 
 
 router.get('/',(req,res)=>{
-    res.render('about');
+    
+    db.sqlparam("select * from tab_title",(err,result)=>{
+        res.render('about',{ data: result});
+    });
+   
 });
 
 router.get('/about',(req,res)=>{
-    res.render('about');
+    db.sqlparam("select * from tab_title",(err,result)=>{
+        res.render('about',{ data: result});
+    });
+   
 });
 
 router.get('/index',(req,res)=>{
-    res.render('index');
+    db.sqlparam("select * from tab_home",(err,result)=>{
+        res.render('index',{ data: result});
+    });
 });
 
 
@@ -30,7 +40,9 @@ router.get('/elements',(req,res)=>{
     res.render('elements');
 });
 router.get('/single',(req,res)=>{
-    res.render('single');
+    db.sqlparam("select * from t_single",(err,result)=>{
+        res.render('single',{ data: result});
+    });
 });
 router.get('/blog',(req,res)=>{
     res.render('blog');
