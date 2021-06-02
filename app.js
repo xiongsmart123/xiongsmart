@@ -12,6 +12,7 @@ var task1Router = require('./routes/task1');
 var indRouter = require('./routes/ind');
 
 
+
 var app = express();
 
 // view engine setup
@@ -31,6 +32,7 @@ app.use('/register',registerRouter);
 app.use('/oo',indexRouter);
 app.use('/task1',task1Router);
 app.use('/ind',indRouter);
+
 
 
 // catch 404 and forward to error handler

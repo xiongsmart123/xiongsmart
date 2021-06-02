@@ -20,10 +20,10 @@
         }
     </style>
        
-                    <form action="/ind/to/<%=datas[0].use_id %>" method="POST">
+                    <form action="/ind/to"method="POST">
+                        <input type="hidden" name="use_id"  value="<%= datas[0].use_id %>"/>
                         <input type="text" name="use_name"  value="<%= datas[0].use_name %>"/>
                         <input type="text" name="t_id"  value="<%= datas[0].t_id %>"/>
-                        <input type="text" name="use_id"  value="<%= datas[0].use_id %>"/>
                         <input type="submit" value="确定"/>
                     </form>
     </body>    

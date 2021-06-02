@@ -39,21 +39,32 @@ router.post('/',(req,res) =>{
 
 router.get('/to/:use_id', function (req, res) {
    var id = req.params.use_id;
-   console.log(id);
+   
    db.sqlparam("select * from people where use_id="+id,function(err,rows){
    
           if (err) {
               res.end(err);
           } else {
-   console.log(rows)
+      console.log(rows)
               res.render('gai', {datas: rows}); 
        }
     });
 
 });
 
-router.post('/to/:use_id',function(req,res){
-  res.send("hhhhhh")
+router.post('/to',function(req,res){
+    db.sqlparam("update people set use_name=? where use_id=?",
+   [req.body.use_name,
+     req.body.use_id
+
+   ],function (err, rows) {
+              if (err) {
+                  res.end( + err)
+              } else {
+                     res.redirect('/ind');
+              }
+     });
+       
 });
 
 router.get('/del/:use_id', function (req, res) {
