@@ -44,11 +44,37 @@
             2021-05-31 星期一 20:00
             票档
             预售票（138.00）
-            全价票（168.00）
-            双人票（258.00）
-            VIP票（含二楼畅饮+提前1小时入场）（268.00）</p>
-            <a href="/oo" class=" scroll">购买</a>
-        </div>    
+            <br>
+            还剩下<h4><p id="count" style="color:coral;" onkeyup="sum(this);"><%=count%></p></h4>
+          </p>
+
+        </div>  
+        <center>
+        <form action="/blg"method="post">
+        <div>
+          <label for="name" style="color:coral;">登入名</label>
+          <input type="text" name="user_name" id="name">
+          <p class="name" id="p_name"></p>
+        </div>
+        <div>
+          <label for="chName"style="color:coral;">密码</label>
+          <input type="text" name="user_pass" id="pass">
+          <p class="chName" id="p_pass"></p>
+        </div>
+        <div>
+         
+          <label for="chName"style="color:coral;">购票数量</label>
+          <input type="text" name="user_buy" id="buy" onkeyup="sum(this);">
+        </div>
+        <div>
+          <label for="chName"style="color:coral;">票价钱</label>
+         <input type="text" name="user_price" id="price" onkeyup="sum(this);">自动生成 
+        </div>
+        <div>
+          <input type="submit" value="提交" id="de">
+        </div> 
+      </form> 
+    </center>
         <div class="row">
           <div class="col-lg-6 color-img-three">
             <img src="images/blog3.jpg" alt="news image" class="img-fluid">
@@ -233,4 +259,17 @@
     </footer>
     <!--//footer -->
   </body>
+  <script type="text/javascript">
+      var count =document.getElementById("count");
+      function sum(obj){
+        var pass =document.getElementById("price");
+        var buy =document.getElementById("buy");
+        var count =document.getElementById("count");
+        price.value=parseInt(price.value);
+        if(buy.value!=''){
+          price.value=parseInt(buy.value)*168;
+          count.value=parseInt(count.value)-parseInt(buy.value);
+        }
+      }
+  </script>
 </html>

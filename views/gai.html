@@ -8,23 +8,18 @@
 </head>
 <body>
     <style>
-         body{background-color: rgb(248, 183, 6);}
-        table, td, th
-        {
-            border:1px solid rgb(12, 234, 241);
-        }
-        th
-        {
-            background-color:rgb(12, 241, 134);
-            color:white;
-        }
+         body{background-color: black;}
+         form{
+             background-color: #ff7f50;}
+      
     </style>
        
-                    <form action="/ind/to"method="POST">
+                    <form align="center" action="/ind/to"method="POST">
                         <input type="hidden" name="use_id"  value="<%= datas[0].use_id %>"/>
                         <input type="text" name="use_name"  value="<%= datas[0].use_name %>"/>
                         <input type="text" name="t_id"  value="<%= datas[0].t_id %>"/>
                         <input type="submit" value="确定"/>
                     </form>
+                  
     </body>    
 </html>

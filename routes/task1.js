@@ -24,7 +24,8 @@ router.post('/',(req,res) =>{
     connection.query(query,(err,result,fields)=>{
        var u =result[0];
         if(!u){
-            res.json({"s":-1});
+            res.json('登入失败请从新回到页面');
+        
         }else{
             res.render('left');
         }

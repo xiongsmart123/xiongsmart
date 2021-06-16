@@ -96,13 +96,13 @@
 				<!-- Contact Form -->
 				<div class="col-lg-6">
 					<div class="contact_form_container">
-						<div class="contact_title">Send us a message</div>
-						<form action="/pp" class="contact_form" id="contact_form">
-							<input type="text" class="contact_input" placeholder="Name" required="required">
-							<input type="email" class="contact_input" placeholder="E-mail" required="required">
-							<input type="text" class="contact_input" placeholder="Subject">
-							<textarea class="contact_input contact_textarea" placeholder="Message" required="required"></textarea>
-							<button class="contact_button">Send Message</button>
+						<div class="contact_title">请留下您的意见</div>
+						<form action="/contact"method="post" class="contact_form" id="contact_form">
+							<input type="text" class="contact_input" name="c_name" placeholder="Name" required="required">
+							<input type="email" class="contact_input" name="c_email" placeholder="E-mail" required="required">
+							<input type="text" class="contact_input" name="c_subject" placeholder="Subject">
+							<textarea class="contact_input contact_textarea" name="c_message" placeholder="Message" required="required"></textarea>
+							<button class="contact_button">Send</button>
 						</form>
 					</div>
 				</div>

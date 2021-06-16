@@ -35,7 +35,7 @@ function init() {
 		var v=input_mi.value;
 		var p=document.getElementById("p_pass");
 		
-		if(v==""||v==null||v.length<12) {
+		if(v==""||v==null||v.length<6) {
 			p.innerHTML="必填，长度为大于12位字符";
 		}
 		else {

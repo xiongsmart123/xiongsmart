@@ -31,11 +31,6 @@ router.get('/index',(req,res)=>{
     });
 });
 
-
-
-router.get('/contact',(req,res)=>{
-    res.render('contact');
-});
 router.get('/elements',(req,res)=>{
     res.render('elements');
 });
@@ -65,12 +60,6 @@ router.post('/add',(req,res) =>{
 router.get('/yellow',(req,res)=>{
     res.render('yellow');
 });
-router.get('/ka',(req,res)=>{
-    res.render('ka');
-});
-
-
-
 
 router.get('/pp',(req,res)=>{
     res.render('pp');
@@ -80,9 +69,6 @@ router.get('/uu',(req,res)=>{
 });
 router.get('/ii',(req,res)=>{
     res.render('ii');
-});
-router.get('/blg',(req,res)=>{
-    res.render('blg');
 });
 
 

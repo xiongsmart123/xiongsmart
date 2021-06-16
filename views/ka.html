@@ -8,7 +8,33 @@
 <body>
     <style>
         body{background-color: rgba(253, 16, 241, 0.521);}
+        p{
+		display:inline;}
     </style>
-    <h1 style="color:rgba(80, 229, 255, 0.856);">打卡成功</h1>
+  <div>
+    <table style="width:400px; margin-right:auto; margin-left:auto;" border="1" cellspacing="0">
+
+        <% for(let o of data){%>
+         
+            <h1><%=o.use_name %></h1>
+            <h1><%=o.int %></h1>
+            <h1>||</h1>
+            初始分数值<input type="text"  id="int" onkeyup="sum(this);">
+            <br>
+            打卡成功<input type="text"  id="int_again" onkeyup="sum(this);">
+      <% }  %>
+     
+    </table>
+      
+      
+</table>
+
 </body>
+<script type="text/javascript">
+    function sum(obj){
+      var int =document.getElementById("int");
+      var int_again =document.getElementById("int_again");
+      int_again.value=parseInt(int.value)+5;
+    }
+</script>
 </html>

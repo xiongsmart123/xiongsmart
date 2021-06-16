@@ -10,7 +10,8 @@ var registerRouter = require('./routes/register');
 var indexRouter = require('./routes/buy');
 var task1Router = require('./routes/task1');
 var indRouter = require('./routes/ind');
-
+var contactRouter= require('./routes/contact');
+var kaRouter= require('./routes/ka');
 
 
 var app = express();
@@ -29,10 +30,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', loginRouter);
 app.use('/register',registerRouter);
-app.use('/oo',indexRouter);
+app.use('/blg',indexRouter);
 app.use('/task1',task1Router);
 app.use('/ind',indRouter);
-
+app.use('/contact',contactRouter);
+app.use('/ka',kaRouter);
 
 
 // catch 404 and forward to error handler
